@@ -5,18 +5,21 @@
 /* common styles & utilities */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #F3F1FF;
+    background-color: #dcd7fa;
 }
 
 main {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container {
-    background-color: #FFFFFF;
+    background-color: #f6f2f7;
     width: 870px;
     padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
 }
 
 hr {
@@ -60,6 +63,11 @@ hr {
 
 /* --------------------------Top Vlogs--------------
 ---------------------------------------------------- */
+.blogs-div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+}
 
 .thumbnails img {
     width: 177px;
@@ -74,6 +82,7 @@ hr {
 .author {
     font-size: 16px;
     color: #562EFF;
+    text-decoration: none;
 }
 
 .para {
@@ -87,4 +96,122 @@ hr {
 
 .blog-info {
     margin-left: 16px;
+}
+
+/* -----------------------------------------lastest courses styles------------------------
+-------------------------- ------------------------------------------------------------------------*/
+.course-div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+}
+
+.course-fr {
+    width: 260px;
+    height: 270px;
+}
+
+.courses img {
+    width: 240px;
+    height: 104px;
+}
+
+.course-name {
+    font-family: 'Roboto';
+    font-weight: 500;
+    color: #200606;
+    font-size: 20px;
+}
+
+.author-name {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 14.6913px;
+    color: #ED6B4F;
+
+}
+
+.course-detials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-detials p {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.fa-star.filled {
+    color: #FFC014;
+    font-size: 12px;
+}
+
+.fa-star.empty {
+    color: rgb(122, 141, 148);
+    font-size: 12px;
+}
+
+.time {
+    height: 20px;
+    padding: 4px 5px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #FF4A60;
+    background-color: #ecc1c6;
+    border-radius: 15px;
+}
+
+/* ---------------------------------------------------------------------------
+                            small devices 
+------------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 688px) and (max-width: 992px) {
+    .container {
+        width: 100%;
+    }
+
+    .players,
+    .blogs-div {
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+
+    .player,
+    .blogs {
+        justify-content: center;
+
+    }
+
+    .course-div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 688px) {
+    .container {
+        width: 100%;
+    }
+
+    .players,
+    .blogs-div,
+    .course-div {
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+
+    .player,
+    .blogs,
+    .course-div {
+        justify-content: center;
+
+    }
+
+    .blogs,
+    .course-div {
+        display: flex;
+        flex-direction: column;
+
+    }
 }
